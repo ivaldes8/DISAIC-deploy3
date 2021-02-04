@@ -1,0 +1,91 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <img class="img-fluid pt-4 navbar-img1 float-left" src="./assets/logotipo disaic.png" alt="">
+      <p id="text3" class="pt-5">Encuentranos en:
+        <a href="inicio"><img id="text3" class="navbar-img3" src="./assets/face.png" alt=""></a>
+        <a href="inicio"><img id="text3" class="ml-2 navbar-img3" src="./assets/twiter.png" alt=""></a>
+      </p>
+    </div>
+    <div class="col-4">
+      <img class="img-responsive ml-5 navbar-img2" src="./assets/apoyo gráfico.png" alt="">
+    </div>
+    <div class="col-4">
+      <p class="pt-5 text3">Encuentranos en:
+          <a href="inicio"><img class="ml-3 navbar-img3" src="./assets/face.png" alt=""></a>
+          <a href="inicio"><img class="ml-3 navbar-img3" src="./assets/twiter.png" alt=""></a>
+      </p>
+    </div>
+  </div>
+</div>
+<nav class="navbar-expand-lg bg-disaic-blue sticky-top shadow">
+  <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">
+    <span class="navbar-toggler-icon"><fa-icon style="color: white;" [icon]="faBars"></fa-icon></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapseBasic" [collapse]="isCollapsed" [isAnimated]="true">
+    <ul class="navbar-nav">
+      <li class="nav-item pr-3 pl-3">
+        <a class="nav-link color-text" routerLink = "inicio" routerLinkActive = "active">INICIO</a>
+      </li>
+      <li class="nav-item pr-3 pl-3">
+        <a class="nav-link color-text" routerLink = 'nosotros' routerLinkActive = 'active'>NOSOTROS</a>
+      </li>
+      <li class="nav-item pr-3 pl-3">
+        <a class="nav-link color-text" routerLink = 'consultorias' routerLinkActive = 'active'>CONSULTORÍAS</a>
+      </li>
+      <li class="nav-item pr-3 pl-3">
+        <a class="nav-link color-text" routerLink = 'prodServ' routerLinkActive = 'active'>PRODUCTOS Y SERVICIOS</a>
+      </li>
+      <li class="nav-item pr-3 pl-3">
+        <a class="nav-link color-text" routerLink = 'entrenamientos' routerLinkActive = 'active'>ENTRENAMIENTOS TEMÁTICOS</a>
+      </li>
+      <li class="nav-item pr-3 pl-3">
+        <a class="nav-link color-text" routerLink = 'clientes' routerLinkActive = 'active'>NUESTROS CLIENTES</a>
+      </li>
+      <li class="nav-item pr-3 pl-3">
+        <a class="nav-link color-text" routerLink = 'contactos' routerLinkActive = 'active'>CONTACTOS</a>
+      </li>
+      <li class="nav-item pr-3 pl-3"  *ngIf = "isAuthenticated">
+        <a class="nav-link color-text" routerLink = 'admin' routerLinkActive = 'active'>Administrar</a>
+      </li>
+      <li class="nav-item pr-3 pl-3" *ngIf = "isAuthenticated">
+        <a style="cursor: pointer;" class="nav-link color-text" (click) = "onLogout()">Log Out</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<div class="text-white p-4 title">
+  <div class="row">
+      <div class="col-12 col-md-6 col-xl-6 pl-md-5 pl-xl-5">
+          <h5 class="pl-5">Contactos</h5>
+          <p class="pl-5 content"> <img style="width: 5%;" src="./assets/icono dirección.png" alt=""> Calzada de Buenos Aires No. 100 esq. Leonor, Cerro, La Habana, Cuba.</p    >
+          <p class="pl-5 content"> <img style="width: 5%;" src="./assets//iconos de telefono.png" alt=""> (53) 7 870 9215</p>
+          <p class="pl-5 content"> <img style="width: 5%;" src="./assets/iconos de correo.png" alt=""> disaic@disaic.cu</p>
+      </div>
+      <div class="col-12 col-md-6 col-xl-6">
+          <div class="row bg-disaic-blue shadow">
+              <div class="col-3">
+                  <a href="" ><img class="footerimg0 mt-1" src="./assets/transparente.png" alt=""></a>
+              </div>
+              <div class="col-3">
+                  <a class="nav-link" href=""><img class="footerimg1" src="./assets/presidencia 305x210px.jpg" alt=""></a>
+              </div>
+              <div class="col-3">
+                  <a class="nav-link" href=""><img class="footerimg2 mt-1" src="./assets/logo gesime.png" alt=""></a>
+              </div>
+              <div class="col-3">
+                  <a class="nav-link" href=""><img class="footerimg3" src="./assets/MINDUS LOGO.png" alt=""></a>
+              </div>
+          </div>
+          <p style="padding-top: 10%;" class="copyrigth text-center">© CopyRight 2020.</p>
+          <p class="copyrigth2">Todos los derechos reservados para Casa Consultora DISAIC</p>
+      </div>
+
+  </div>
+
+</div>

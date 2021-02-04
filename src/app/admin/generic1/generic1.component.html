@@ -1,0 +1,84 @@
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 jumbotron text-center" style="text-align:center;">
+      <h3>Gestionar Contenido:</h3>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-12 text-center">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="inicio" (change) = "selectedItem($event)" checked>
+        <label class="form-check-label" for="inlineRadio1">Inicio</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="consultoria" (change) = "selectedItem($event)">
+        <label class="form-check-label" for="inlineRadio2">Consultorias</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="nosotro" (change) = "selectedItem($event)">
+        <label class="form-check-label" for="inlineRadio3">Nosotros</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="producto" (change) = "selectedItem($event)">
+        <label class="form-check-label" for="inlineRadio3">Productos</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="servicio" (change) = "selectedItem($event)">
+        <label class="form-check-label" for="inlineRadio3">Servicios</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="entrenamientos" (change) = "selectedItem($event)">
+        <label class="form-check-label" for="inlineRadio3">Entrenamientos</label>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <span (click)="addGeneric()" class="btn btn-primary btn-xs">Crear Elemento</span>
+      <br /><br />
+      <div class="table-responsive col-12">
+        <div class="jumbotron text-center" *ngIf = "fetching">
+          <fa-icon style="color: blue;" [icon]="faSpinner" [spin] = 'true' size="4x"></fa-icon>
+        </div>
+        <table *ngIf = "!fetching" id="mytable" class="table table-bordred table-striped">
+          <thead>
+            <th>Id</th>
+            <th>Titulo</th>
+            <th>Descripcion</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of returnedArray">
+              <td>{{item.id}}</td>
+              <td>{{item.titulo}}</td>
+              <td>{{item.descripcion}}</td>
+              <td><span class="btn btn-primary btn-xs" (click)="editGeneric(item.id, item.titulo, item.descripcion)">
+                <fa-icon style="color: white;" [icon]="faEdit"></fa-icon></span></td>
+              <td><span class="btn btn-danger btn-xs" (click)="deleteGeneric(item.id, item.titulo, item.descripcion)">
+                <fa-icon style="color: white;" [icon]="faTrash"></fa-icon></span></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="row">
+          <div class="col-6">
+           <pagination [totalItems]="startList.length" [itemsPerPage] = "itemsPerPage"  (pageChanged)="pageChanged($event)"></pagination>
+          </div>
+          <div class="col-6 ml-auto">
+           <label for="location1" class="col-form-label">Elementos por Pagina</label>
+           <select class="form-control" (change)="selectedItemsPerPage($event)">
+             <option value="5">5</option>
+             <option value="10">10</option>
+             <option value="20">20</option>
+           </select>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<br>

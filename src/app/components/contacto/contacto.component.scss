@@ -1,0 +1,25 @@
+.title{
+  color: white;
+  background-color: #0f6db9;
+}
+.bg-disaic-blue{
+  background-color: #1191fa;
+  color: rgb(217, 233, 247);
+}
+
+.text{
+  color: #0f6db9;
+}
+
+.eye{
+  position:absolute;
+  left: 248px;
+  top: 105px;
+  z-index: 1;
+}
+
+.heaven{
+  position:absolute;
+  z-index: -1;
+  width: 80%;
+}

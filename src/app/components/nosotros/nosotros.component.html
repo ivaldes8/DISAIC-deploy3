@@ -1,0 +1,53 @@
+
+<br>
+<div class="row">
+    <div class="col-12">
+        <div class="container">
+            <img style="width: 90%;" class="responsive-img" src="./assets/foto disaic.jpg" alt="">
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+
+  <div class="jumbotron text-center col-12" *ngIf = "fetching">
+    <fa-icon style="color: blue;" [icon]="faSpinner" [spin] = 'true' size="4x"></fa-icon>
+  </div>
+
+  <div class="row">
+    <div class="col-12 text" *ngFor = "let item of startList">
+        <p>{{ item.titulo }}</p>
+        <p>{{ item.descripcion }}</p>
+    </div>
+</div>
+</div>
+<br>
+<div class="row">
+    <div class="col-12">
+        <div class="container">
+            <img style="width: 90%;" class="mx-auto d-block" src="./assets/mision vision de quienes somos.jpg" alt="">
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-12">
+        <div class="container">
+            <img style="width: 90%;" class="mx-auto d-block" src="./assets/ORGANIGRAMA.jpg" alt="">
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-4">
+        <img class="float-right" style="width: 25%;" src="./assets/SGC Reg 167-2018 CS 18-050 (DISAIC)1.jpg" alt="">
+    </div>
+    <div class="col-4">
+        <img class="mx-auto d-block" style="width: 25%;" src="./assets/SIG Reg 064-2018 CS 18-050 CSST 18-039 (DISAIC)2.jpg" alt="">
+    </div>
+    <div class="col-4">
+        <img class="float-left" style="width: 25%;" src="./assets/SGSST Reg 011-2017 CSST 18-039 (DISAIC)3.jpg" alt="">
+    </div>
+</div>
+<br>
+<br>

@@ -1,0 +1,49 @@
+<br>
+<br>
+<div class="row">
+    <div class="col-12">
+        <h3 class="title p-2 mb-2">PRODUCTOS</h3>
+    </div>
+
+  <div class="jumbotron text-center col-12" *ngIf = "fetching1">
+    <fa-icon style="color: blue;" [icon]="faSpinner" [spin] = 'true' size="4x"></fa-icon>
+  </div>
+
+    <div class="col-12 text-center" *ngFor = "let itemP of startListP;index as i">
+      <br *ngIf = "itemP.titulo">
+      <br *ngIf = "itemP.titulo">
+      <div class="card">
+        <div class="card-body">
+            <h5 class="text" *ngIf = "itemP.titulo">{{ itemP.titulo }}</h5>
+            <hr *ngIf = "itemP.descripcion">
+            <p *ngIf = "itemP.descripcion">{{ itemP.descripcion }}</p>
+            <button class="btn btn-primary" (click) = "AddPro()">Contratar Producto</button>
+        </div>
+      </div>
+    </div>
+
+</div>
+<br>
+<br>
+
+<div class="row">
+    <div class="col-12">
+        <h3 class="title p-2 mb-2" >SERVICIOS</h3>
+        <br>
+    </div>
+</div>
+<div class="row">
+
+  <div class="jumbotron text-center col-12" *ngIf = "fetching2">
+    <fa-icon style="color: blue;" [icon]="faSpinner" [spin] = 'true' size="4x"></fa-icon>
+  </div>
+
+    <div class="col-12 text-center" *ngFor = "let itemS of startListS;index as i">
+        <br *ngIf = "itemS.titulo">
+        <br *ngIf = "itemS.titulo">
+        <h5 class="text" *ngIf = "itemS.titulo">{{ itemS.titulo }}</h5>
+        <hr *ngIf = "itemS.titulo">
+        <p *ngIf = "itemS.descripcion">{{ itemS.descripcion }}</p>
+    </div>
+</div>
+<br><br>

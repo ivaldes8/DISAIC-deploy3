@@ -1,0 +1,17 @@
+<br>
+<br>
+
+<div class="jumbotron text-center col-12" *ngIf = "fetching">
+  <fa-icon style="color: blue;" [icon]="faSpinner" [spin] = 'true' size="4x"></fa-icon>
+</div>
+
+<div class="row" *ngFor = "let item of startList;index as i">
+    <div class="col-12 text-center">
+        <br *ngIf = "item.titulo">
+        <h4 class="text" *ngIf = "item.titulo">{{ item.titulo }}</h4>
+        <hr *ngIf = "item.titulo">
+        <p *ngIf = "item.descripcion">{{ item.descripcion }}</p>
+    </div>
+</div>
+<br>
+
