@@ -1,0 +1,22 @@
+{
+  "navbar": {
+      "idioma": "IDIOMA",
+      "inicio": "INICIO",
+      "nosotro": "NOSOTROS",
+      "consultoria": "CONSULTORÍAS",
+      "prodserv": "PRODUCTOS Y SERVICOS",
+      "entrenamiento": "ENTRENAMIENTOS TEMÁTICOS",
+      "cliente": "NUESTROS CLIENTES",
+      "contacto": "CONTACTOS"
+  },
+  "inicio": {
+      "cliente": "Principales clientes"
+  },
+  "nosotro": {
+
+  },
+  "prodserv": {
+    "producto": "PRODUCTOS",
+    "servicio": "SERVICIOS"
+  }
+}

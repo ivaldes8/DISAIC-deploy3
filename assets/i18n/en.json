@@ -1,0 +1,22 @@
+{
+  "navbar": {
+      "idioma": "IDIOM",
+      "inicio": "HOME",
+      "nosotro": "ABOUT US",
+      "consultoria": "CONSULTORIES",
+      "prodserv": "PRODUCTS AND SERVICES",
+      "entrenamiento": "TEMATICS TRAINING",
+      "cliente": "OUR CLIENTS",
+      "contacto": "CONTACTS"
+  },
+  "inicio": {
+      "cliente": "Most Remarcable Clients"
+  },
+  "nosotro": {
+
+  },
+  "prodserv": {
+    "producto": "PRODUCTS",
+    "servicio": "SERVICES"
+  }
+}
