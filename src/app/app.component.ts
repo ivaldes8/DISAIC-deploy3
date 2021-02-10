@@ -3,6 +3,7 @@ import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 import { faCoffee, faBars,faSpinner, faWrench } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from './auth/auth.service';
 import { Subscription } from 'rxjs';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private userSub: Subscription;
 
-  constructor(private authService: AuthService){}
+  constructor(private authService: AuthService, private translate: TranslateService){}
 
   ngOnInit(){
     this.authService.autoLogin();
@@ -29,6 +30,9 @@ export class AppComponent implements OnInit, OnDestroy {
       console.log(!!user);
      }
    );
+
+  this.translate.setDefaultLang('es');
+
   }
 
   ngOnDestroy(){
@@ -37,5 +41,21 @@ export class AppComponent implements OnInit, OnDestroy {
 
   onLogout(){
     this.authService.logout();
+  }
+
+  useLanguage(event:any){
+      const language = event.target.value;
+
+      if(language == "espanol"){
+        this.translate.use('es');
+      }
+
+      if(language == "ingles"){
+        this.translate.use('en');
+      }
+
+      if(language == "frances"){
+        this.translate.use('fr');
+      }
   }
 }

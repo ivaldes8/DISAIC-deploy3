@@ -16,6 +16,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ToastrModule } from 'ngx-toastr';
 
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { GenericService1 } from './services/generic1.service';
 import { Generic2Service } from './services/generic2.service';
@@ -64,7 +67,14 @@ import { EditGeneric1Component } from './admin/generic1/edit-generic1/edit-gener
     ToastrModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+  })
   ],
   providers: [
     BsModalService,
@@ -81,3 +91,7 @@ import { EditGeneric1Component } from './admin/generic1/edit-generic1/edit-gener
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

@@ -37,11 +37,30 @@
 </div>
 <br><br>
 <div class="row">
+  <div class="col-12">
+    <h3 class="title p-2 text-center">{{ 'inicio.cliente' | translate }}</h3>
+  </div>
     <div class="col-12">
-        <h3 class="title p-2 mb-2" >Principales clientes</h3>
-    </div>
-    <div class="col-12">
-        <img class="p-3" src="./assets/principales clientes.jpg" style="width: 95%;" alt="">
+      <carousel [isAnimated]="true" [startFromIndex]="startIndex" [itemsPerSlide]="itemsPerSlide">
+        <slide class="animated fadeIn">
+          <img src="./assets/CLIENTE EISA.png" alt="image slide" style="display: block; width: 100%;">
+        </slide>
+        <slide class="animated fadeIn">
+          <img src="./assets/CLIENTE GESIME.png" alt="image slide" style="display: block; width: 100%;">
+        </slide>
+        <slide class="animated fadeIn">
+          <img src="./assets/CLIENTE MINISTERIO INDUSTRIA.png" alt="image slide" style="display: block; width: 100%;">
+        </slide>
+        <slide class="animated fadeIn">
+          <img src="./assets/CLIENTE CEDAI.png" alt="image slide" style="display: block; width: 100%;">
+        </slide>
+        <slide class="animated fadeIn">
+          <img src="./assets/CLIENTE COPEXTEL.png" alt="image slide" style="display: block; width: 100%;">
+        </slide>
+        <slide class="animated fadeIn">
+          <img src="./assets/CLIENTE EMTA.png" alt="image slide" style="display: block; width: 100%;">
+        </slide>
+      </carousel>
     </div>
 </div>
 <br>

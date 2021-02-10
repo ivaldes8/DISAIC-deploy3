@@ -12,6 +12,8 @@ export class InicioComponent implements OnInit {
   url = "inicioList";
   startList: any[] = [];
   fetching = false;
+  startIndex = 0;
+  itemsPerSlide = 2;
 
   constructor(private genericService:GenericService1) { }
 
